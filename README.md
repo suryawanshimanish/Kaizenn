@@ -4,12 +4,15 @@ SIH26044 · Academia–Industry Skill Mapping, Internships & Placement
 
 A runnable, responsive hackathon demo with Student, Industry, Institution, and lightweight Academician portals. All records and organizations are synthetic. No original source project was supplied, so this is a new implementation of the supplied concept, not a verified reuse of an existing codebase.
 
-## Run
+## Open directly
+Double-click the repository's `index.html` to open the demo in your browser. No server, Node.js, npm, or build step is required. In this mode, changes are saved in the browser's local storage on that device.
+
+## Run with shared SQLite persistence
 ```sh
-cd /home/user/kaizen
+cd kaizen
 python server.py
 ```
-Open port 3000. Python 3 standard library only; no runtime package installation is needed. The server listens on `0.0.0.0`. Browser API calls use relative URLs.
+Open port 3000. Python 3 standard library only; no runtime package installation is needed. The server listens on `0.0.0.0`. Browser API calls use relative URLs. This mode stores state in SQLite and shares it across browser sessions.
 
 ## Implemented
 - Profile editing and saved target role
@@ -56,6 +59,7 @@ Open port 3000. Python 3 standard library only; no runtime package installation 
 
 ## Architecture
 - `static/index.html`: application shell.
+- `index.html`: double-click entry point for opening the project without a server.
 - `static/style.css`: responsive design system and layouts.
 - `static/app.js`: portal views, demo rules, assessment, calculations, actions.
 - `server.py`: Python HTTP server and JSON persistence API.
